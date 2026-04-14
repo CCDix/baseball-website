@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The official mental performance partner of the German Baseball League.">
+    <title>dobetr Baseball – Mental Edge Wins Championships</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #212529; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
+
+        /* HEADER */
+        header { position: sticky; top: 0; background: white; border-bottom: 1px solid #dee2e6; z-index: 1000; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-weight: 700; font-size: 18px; }
+        .logo span { color: #DC143C; }
+        nav { display: flex; gap: 24px; }
+        nav a { color: #212529; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.25s; }
+        nav a:hover { color: #1F4E78; }
+        .btn-primary { background-color: #1F4E78; color: white; padding: 8px 16px; border-radius: 8px; }
+
+        /* HERO */
+        .hero { background: linear-gradient(135deg, #1F4E78 0%, #DC143C 100%); color: white; padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 16px; line-height: 1.1; }
+        .hero p { font-size: 18px; margin-bottom: 32px; }
+        .hero-ctas { display: flex; gap: 16px; justify-content: center; }
+        .btn { padding: 16px 32px; font-size: 16px; font-weight: 600; border-radius: 8px; text-decoration: none; cursor: pointer; border: none; transition: all 0.25s; display: inline-block; }
+        .btn-primary { background-color: #1F4E78; color: white; }
+        .btn-primary:hover { background-color: #DC143C; transform: translateY(-2px); }
+        .btn-secondary { background-color: transparent; color: white; border: 2px solid white; }
+        .btn-secondary:hover { background-color: white; color: #1F4E78; }
+
+        /* STATS */
+        .stats { padding: 64px 0; background: #f8f9fa; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .stat-card { background: white; padding: 32px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .stat-number { font-size: 48px; font-weight: 800; color: #1F4E78; margin-bottom: 8px; }
+        .stat-label { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .stat-desc { font-size: 14px; color: #6c757d; }
+
+        /* HIGHLIGHTS */
+        .highlights { padding: 64px 0; }
+        .section-title { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 48px; color: #1F4E78; }
+        .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .highlight-card { background: white; padding: 32px; border-radius: 12px; border-left: 4px solid #1F4E78; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .highlight-card h3 { font-size: 18px; margin-bottom: 12px; }
+        .highlight-card p { color: #6c757d; line-height: 1.8; }
+
+        /* TESTIMONIALS */
+        .testimonials { background: linear-gradient(135deg, #1F4E78 0%, #DC143C 100%); color: white; padding: 64px 0; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 48px; }
+        .testimonial { background: rgba(255,255,255,0.1); padding: 32px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); }
+        .testimonial p { font-size: 18px; font-style: italic; margin-bottom: 24px; line-height: 1.8; }
+.testimonial-author { border-top: 1px solid rgba(255,255,255,0.3); padding-top: 16px; }
+        .author-name { font-weight: 700; margin-bottom: 4px; }
+        .author-title { font-size: 14px; opacity: 0.9; }
+
+        /* CTA */
+        .cta { background: linear-gradient(135deg, #1F4E78 0%, #DC143C 100%); color: white; padding: 64px 0; text-align: center; }
+        .cta h2 { font-size: 32px; margin-bottom: 16px; }
+        .cta p { font-size: 18px; margin-bottom: 32px; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; }
+
+        /* FOOTER */
+        footer { background: #1a1a1a; color: white; padding: 64px 0 24px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-bottom: 32px; }
+        .footer-col h4 { margin-bottom: 16px; }
+        .footer-col ul { list-style: none; }
+        .footer-col a { color: rgba(255,255,255,0.8); text-decoration: none; display: block; margin-bottom: 8px; }
+        .footer-col a:hover { color: #FFD700; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.6); }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero h1 { font-size: 28px; }
+            .hero-ctas { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <div class="logo">dobetr <span>Baseball</span></div>
+            <nav>
+                <a href="#partnership">Partnership</a>
+                <a href="#pace">What is PACE</a>
+                <a href="#contact" class="btn-primary">Get Started</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Mental Edge Wins Championships</h1>
+        <p>The official mental performance partner of the German Baseball League</p>
+        <div class="hero-ctas">
+            <a href="#partnership" class="btn btn-primary">Learn About Partnership</a>
+            <a href="#pace" class="btn btn-secondary">What is PACE?</a>
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">120+</div>
+                <div class="stat-label">DBL Players</div>
+                <div class="stat-desc">All DBL clubs supported</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">13</div>
+                <div class="stat-label">Mental Skills</div>
+                <div class="stat-desc">Measured & Optimized</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3x</div>
+                <div class="stat-label">Per Season</div>
+                <div class="stat-desc">Continuous Tracking</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="highlights" id="partnership">
+    <div class="container">
+        <h2 class="section-title">Why the DBL Chose PACE</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <h3>🎯 Systematic Diagnostics</h3>
+                <p>Measure mental performance across 13 key skills with data-driven insights.</p>
+            </div>
+            <div class="highlight-card">
+                <h3>📊 Data-Driven Decisions</h3>
+                <p>Understand who performs under pressure and make better roster decisions.</p>
+            </div>
+            <div class="highlight-card">
+                <h3>🧠 Integrated Training</h3>
+                <p>PACE results integrate directly into coaching programs for optimal development.</p>
+            </div>
+            <div class="highlight-card">
+                <h3>📈 Competitive Advantage</h3>
+<p>In baseball, mental endurance decides championships. Gain edge through PACE.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <div class="container">
+        <h2 class="section-title">What Leaders Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p>"Baseball is a game of milliseconds and mental endurance. The ability to maintain focus in the decisive moment differentiates victory from defeat."</p>
+                <div class="testimonial-author">
+                    <div class="author-name">Alexander Dix</div>
+                    <div class="author-title">Founder, dobetr Deutschland</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>"Mental performance has long been overlooked in German baseball. This partnership enables our clubs to systematically develop players' mental strength."</p>
+                <div class="testimonial-author">
+                    <div class="author-name">Armin Zimmermann</div>
+                    <div class="author-title">1st Chairman, German Baseball League</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta" id="contact">
+    <div class="container">
+        <h2>Ready to Measure Your Mental Edge?</h2>
+        <p>Join 120+ DBL players already improving through PACE</p>
+        <div class="cta-buttons">
+            <a href="mailto:baseball@dobetr.de" class="btn btn-primary">Book Your Test</a>
+            <a href="#partnership" class="btn btn-secondary">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#partnership">Partnership</a></li>
+                    <li><a href="#pace">PACE</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: <strong>baseball@dobetr.de</strong></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 dobetr Deutschland. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth Scrolling für alle Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
